@@ -8,8 +8,12 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <h1>MoroTodo</h1>
-                <Todos />
+                <main>
+                    <h1>
+                        <span className="yellow">Moro</span>Todo
+                    </h1>
+                    <Todos />
+                </main>
             </Provider>
         );
     }

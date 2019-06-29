@@ -4,7 +4,6 @@ import { Types } from './actions.js';
 function todos(state = [], action) {
     switch (action.type) {
         case Types.FETCH_TODOS:
-            console.log('reducing');
             return action.todos;
 
         case Types.ADD_TODO:
