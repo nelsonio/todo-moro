@@ -1,7 +1,36 @@
 import React, { Component } from 'react';
 
-export default class Footer extends Component {
+import { connect } from 'react-redux';
+
+class Footer extends Component {
     render() {
-        return <footer>Footer</footer>;
+        const { completed, left } = this.props.todos.reduce(
+            (stats, todo) => {
+                if (todo.completed) {
+                    stats.completed++;
+                } else {
+                    stats.left++;
+                }
+                return stats;
+            },
+            {
+                completed: 0,
+                left: 0,
+            }
+        );
+        return (
+            <footer>
+                {completed} completed, {left} left
+            </footer>
+        );
     }
 }
+
+const mapStateToProps = state => ({
+    todos: state.todos,
+});
+
+export default connect(
+    mapStateToProps,
+    {}
+)(Footer);
