@@ -7,6 +7,7 @@ export const Types = {
 
 export const fillTodos = () => dispatch => {
     const url = 'http://localhost:8080/todos';
+
     fetch(url)
         .then(resp => resp.json())
         .then(todos =>
@@ -18,10 +19,27 @@ export const fillTodos = () => dispatch => {
         .catch(e => console.error('Something went wrong...'));
 };
 
-export const addTodo = text => ({
-    type: Types.ADD_TODO,
-    text,
-});
+export const addTodo = text => dispatch => {
+    const url = 'http://localhost:8080/todos';
+    const data = { text };
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    };
+
+    fetch(url, options)
+        .then(resp => resp.json())
+        .then(data => {
+            dispatch({
+                type: Types.ADD_TODO,
+                data,
+            });
+        })
+        .catch(e => console.error('Something went wrong...'));
+};
 
 export const deleteTodo = id => ({
     type: Types.DELETE_TODO,

@@ -7,7 +7,7 @@ import NewTodo from './NewTodo.js';
 import CurrentTodos from './CurrentTodos';
 
 class Todos extends Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.fillTodos();
     }
 

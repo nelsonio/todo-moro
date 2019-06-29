@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import { addTodo } from '../store/actions.js';
+
 class NewTodo extends Component {
     state = {
         text: '',
@@ -10,24 +13,34 @@ class NewTodo extends Component {
     };
 
     handleKey = e => {
-        var key = e.key || e.keyCode;
+        const text = this.state.text.trimRight();
 
-        if (key === 'Enter' || key === 13) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            if (text.length > 0) {
+                this.props.addTodo(text);
+            }
             this.setState({ text: '' });
         }
     };
 
     render() {
         return (
-            <input
-                type="text"
-                placeholder="Add new task"
-                onChange={this.handleChange}
-                value={this.state.text}
-                onKeyDown={this.handleKey}
-            />
+            <form>
+                <input
+                    type="text"
+                    placeholder="Add new task"
+                    onChange={this.handleChange}
+                    value={this.state.text}
+                    onKeyPress={this.handleKey}
+                />
+            </form>
         );
     }
 }
 
-export default NewTodo;
+export default connect(
+    null,
+    { addTodo }
+)(NewTodo);

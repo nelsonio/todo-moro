@@ -7,19 +7,13 @@ function todos(state = [], action) {
             return action.todos;
 
         case Types.ADD_TODO:
-            return {
-                ...state,
-            };
+            return [...state, action.data];
 
         case Types.TOGGLE_TODO:
-            return {
-                ...state,
-            };
+            return [...state];
 
         case Types.DELETE_TODO:
-            return {
-                ...state,
-            };
+            return [...state];
 
         default:
             return state;
