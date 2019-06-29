@@ -13,7 +13,7 @@ class Todos extends Component {
     }
 
     render() {
-        return this.props.todos.length > 0 ? (
+        return Array.isArray(this.props.todos) ? (
             <>
                 <main>
                     <NewTodo />

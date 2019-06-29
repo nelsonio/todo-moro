@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { Types } from './actions.js';
 
-function todos(state = [], action) {
+function todos(state = null, action) {
     switch (action.type) {
         case Types.FETCH_TODOS:
             return action.todos;
