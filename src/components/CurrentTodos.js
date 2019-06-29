@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Todo from './Todo.js';
+
 const CurrentTodos = ({ todos }) => (
     <ul>
         {todos.map(todo => (
-            <li key={todo.id}>{todo.text}</li>
+            <Todo todo={todo} key={todo.id} />
         ))}
     </ul>
 );

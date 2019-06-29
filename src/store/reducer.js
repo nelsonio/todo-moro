@@ -10,7 +10,11 @@ function todos(state = [], action) {
             return [...state, action.data];
 
         case Types.TOGGLE_TODO:
-            return [...state];
+            return [
+                ...state.map(todo =>
+                    todo.id === action.data.id ? action.data : todo
+                ),
+            ];
 
         case Types.DELETE_TODO:
             return [...state];

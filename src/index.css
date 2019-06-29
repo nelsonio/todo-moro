@@ -4,6 +4,7 @@ body {
     --yellow: #fcbf00;
     --black: #000;
     --white: #fff;
+    --grey: #aaa;
 
     color: #333;
 
@@ -64,6 +65,12 @@ ul li {
     padding: 0.3em;
 }
 
+.completed {
+    color: var(--grey);
+    text-decoration: line-through;
+    text-decoration-color: var(--yellow);
+}
+
 input[type="text"] {
     font-size: 1em;
     font-family: inherit;
@@ -78,7 +85,7 @@ input[type="text"] {
 
 input[type="text"]::placeholder {
     font-style: italic;
-    color: #999;
+    color: var(--grey);
 }
 
 input[type="text"]:focus {
