@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo, renameTodo } from '../store/actions.js';
 
-import { Pen, Remove, Check } from './icons';
+import { Pen, Remove, Check, EmptyCircle, CheckedCircle } from './Icons.js';
 
 class Todo extends Component {
     state = {
@@ -61,11 +61,10 @@ class Todo extends Component {
         const { editable, content } = this.state;
         return (
             <li className={completed ? 'completed' : ''}>
-                <input
-                    type="checkbox"
-                    checked={completed}
-                    onChange={this.toggleCompleted}
-                />
+                <p onClick={this.toggleCompleted} className="toggler">
+                    <input type="checkbox" defaultChecked={completed} />
+                    {completed ? <CheckedCircle /> : <EmptyCircle />}
+                </p>
                 {editable ? (
                     <input
                         type="text"
