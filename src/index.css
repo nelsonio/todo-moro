@@ -114,4 +114,9 @@ footer {
     display: grid;
     justify-items: center;
     align-items: center;
+    grid-template-columns: repeat(5, 1fr)
+}
+
+p {
+    margin: 0;
 }
