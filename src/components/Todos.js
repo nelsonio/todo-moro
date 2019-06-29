@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { fillTodos } from './store/actions.js';
+import { fillTodos } from '../store/actions.js';
+
+import NewTodo from './NewTodo.js';
+import CurrentTodos from './CurrentTodos';
 
 class Todos extends Component {
     componentWillMount() {
@@ -10,13 +13,12 @@ class Todos extends Component {
 
     render() {
         return this.props.todos.length > 0 ? (
-            <ul>
-                {this.props.todos.map(todo => (
-                    <li key={todo.id}>{todo.text}</li>
-                ))}
-            </ul>
+            <main>
+                <NewTodo />
+                <CurrentTodos todos={this.props.todos} />
+            </main>
         ) : (
-            'Loading...'
+            <main>Loading...</main>
         );
     }
 }

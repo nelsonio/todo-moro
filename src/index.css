@@ -2,10 +2,10 @@
 
 body {
     --yellow: #fcbf00;
-    --black: #222;
+    --black: #000;
     --white: #fff;
 
-    color: var(--black);
+    color: #333;
 
     font-size: 20px;
     font-family: "Montserrat",
@@ -22,33 +22,64 @@ body {
     /* padding: 20vh 0; */
 }
 
-main {
+.grid {
     display: grid;
     grid-template-columns: 1fr minmax(0, 17em) 1fr;
-    grid-template-rows: 6em auto;
-    padding-top: 3em;
+    grid-template-rows: 5em auto;
+}
+
+header {
+    grid-column: 1 / 4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+    box-shadow: 0 -5px 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-    text-align: center;
     font-weight: 700;
     text-transform: uppercase;
-    grid-column: 1 / 4;
     margin: 0;
-    align-self: center;
 }
 
 .yellow {
     color: var(--yellow);
 }
 
+main {
+    grid-column-start: 2;
+    padding: 2em 0;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    grid-column-start: 2;
 }
 
 ul li {
     margin: 0.8em 0;
+    padding: 0.3em;
+}
+
+input[type="text"] {
+    font-size: 1em;
+    font-family: inherit;
+    padding: 0.5em 0.3em;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.3em;
+    transition: all 150ms ease-in-out;
+}
+
+input[type="text"]::placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom-color: var(--yellow);
 }
