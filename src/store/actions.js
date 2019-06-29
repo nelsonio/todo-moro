@@ -3,6 +3,7 @@ export const Types = {
     ADD_TODO: 'ADD_TODO',
     DELETE_TODO: 'DELETE_TODO',
     TOGGLE_TODO: 'TOGGLE_TODO',
+    RENAME_TODO: 'RENAME_TODO',
 };
 
 export const fetchTodos = () => dispatch => {
@@ -78,5 +79,27 @@ export const toggleTodo = (id, completed) => dispatch => {
                 data,
             })
         )
+        .catch(e => console.error('Something went wrong...'));
+};
+
+export const renameTodo = (id, text) => dispatch => {
+    const url = `http://localhost:8080/todos/${id}`;
+    const data = { text };
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    };
+
+    fetch(url, options)
+        .then(() => {
+            dispatch({
+                type: Types.RENAME_TODO,
+                id,
+                text,
+            });
+        })
         .catch(e => console.error('Something went wrong...'));
 };

@@ -34,6 +34,7 @@ class NewTodo extends Component {
                     onChange={this.handleChange}
                     value={this.state.text}
                     onKeyPress={this.handleKey}
+                    className="new-todo"
                 />
             </form>
         );

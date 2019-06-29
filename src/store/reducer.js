@@ -19,6 +19,15 @@ function todos(state = [], action) {
         case Types.DELETE_TODO:
             return [...state.filter(todo => todo.id !== action.id)];
 
+        case Types.RENAME_TODO:
+            return [
+                ...state.map(todo =>
+                    todo.id === action.id
+                        ? { ...todo, text: action.text }
+                        : todo
+                ),
+            ];
+
         default:
             return state;
     }

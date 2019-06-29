@@ -74,13 +74,11 @@ ul li {
 input[type="text"] {
     font-size: 1em;
     font-family: inherit;
-    padding: 0.5em 0.3em;
     border: none;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 0.3em;
     transition: all 150ms ease-in-out;
     box-sizing: border-box;
-    width: 100%;
+    display: inline-block;
 }
 
 input[type="text"]::placeholder {
@@ -91,4 +89,15 @@ input[type="text"]::placeholder {
 input[type="text"]:focus {
     outline: none;
     border-bottom-color: var(--yellow);
+}
+
+.new-todo {
+    padding: 0.5em 0.3em;
+    width: 100%;
+    margin-bottom: 0.3em;
+}
+
+.inline-text-input {
+    padding: 0;
+    width: 60%;
 }
