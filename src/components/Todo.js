@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { toggleTodo } from '../store/actions.js';
+import { toggleTodo, deleteTodo } from '../store/actions.js';
 
 class Todo extends Component {
-    handleToggle = () => {
+    toggleCompleted = () => {
         const { id, completed } = this.props.todo;
         this.props.toggleTodo(id, completed);
+    };
+
+    deleteTask = () => {
+        this.props.deleteTodo(this.props.todo.id);
     };
 
     render() {
@@ -16,9 +20,10 @@ class Todo extends Component {
                 <input
                     type="checkbox"
                     checked={completed}
-                    onChange={this.handleToggle}
+                    onChange={this.toggleCompleted}
                 />
                 {text}
+                <button onClick={this.deleteTask}>X</button>
             </li>
         );
     }
@@ -26,5 +31,5 @@ class Todo extends Component {
 
 export default connect(
     null,
-    { toggleTodo }
+    { toggleTodo, deleteTodo }
 )(Todo);

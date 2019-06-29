@@ -41,10 +41,23 @@ export const addTodo = text => dispatch => {
         .catch(e => console.error('Something went wrong...'));
 };
 
-export const deleteTodo = id => ({
-    type: Types.DELETE_TODO,
-    id,
-});
+export const deleteTodo = id => dispatch => {
+    const url = `http://localhost:8080/todos/${id}`;
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    };
+    fetch(url, options)
+        .then(() =>
+            dispatch({
+                type: Types.DELETE_TODO,
+                id,
+            })
+        )
+        .catch(e => console.error('Something went wrong...'));
+};
 
 export const toggleTodo = (id, completed) => dispatch => {
     const url = completed
@@ -59,11 +72,11 @@ export const toggleTodo = (id, completed) => dispatch => {
 
     fetch(url, options)
         .then(resp => resp.json())
-        .then(data => {
+        .then(data =>
             dispatch({
                 type: Types.TOGGLE_TODO,
                 data,
-            });
-        })
+            })
+        )
         .catch(e => console.error('Something went wrong...'));
 };

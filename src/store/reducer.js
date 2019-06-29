@@ -7,7 +7,7 @@ function todos(state = [], action) {
             return action.todos;
 
         case Types.ADD_TODO:
-            return [...state, action.data];
+            return [action.data, ...state];
 
         case Types.TOGGLE_TODO:
             return [
@@ -17,7 +17,7 @@ function todos(state = [], action) {
             ];
 
         case Types.DELETE_TODO:
-            return [...state];
+            return [...state.filter(todo => todo.id !== action.id)];
 
         default:
             return state;
