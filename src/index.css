@@ -194,3 +194,24 @@ button:focus {
 .check:hover {
     fill: var(--black)
 }
+
+input[type="checkbox"] {
+    display: none;
+    cursor: pointer;
+}
+
+.toggler {
+    cursor: pointer;
+}
+
+.empty-circle {
+    fill: #ddd;
+}
+
+.empty-circle:hover {
+    fill: var(--green);
+}
+
+.checked-circle:hover {
+    fill: var(--red);
+}

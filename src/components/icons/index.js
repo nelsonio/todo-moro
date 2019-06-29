@@ -27,3 +27,15 @@ export const Check = () => (
         <path d="M8 22l-8-8 4-4 4 5L20 2l4 4L8 22z" />
     </svg>
 );
+
+export const EmptyCircle = () => (
+    <svg version="1" viewBox="0 0 24 24" className="icon empty-circle">
+        <path d="M12 0C5 0 0 5 0 12s5 12 12 12 12-5 12-12S19 0 12 0z" />
+    </svg>
+);
+
+export const CheckedCircle = () => (
+    <svg version="1" viewBox="0 0 24 24" className="icon checked-circle">
+        <path d="M10 18l-6-6 1-2 5 5 9-10 1 2m-8-7C5 0 0 5 0 12s5 12 12 12 12-5 12-12S19 0 12 0z" />
+    </svg>
+);
