@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 body {
-    --yellow: #fcbf00;
     --black: #000;
     --white: #fff;
     --grey: #aaa;
     --shadow: rgba(0, 0, 0, 0.3);
+    --yellow: #fcbf00;
+    --red: #da0e0e;
+    --green: #05b84f;
 
     color: #333;
 
@@ -25,8 +27,8 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr minmax(0, 17em) 1fr;
-    grid-template-rows: 5em auto 2.7em;
+    grid-template-columns: 1fr minmax(0, 30em) 1fr;
+    grid-template-rows: 5em 1fr auto;
     min-height: 100vh;
 }
 
@@ -64,12 +66,18 @@ ul {
 ul li {
     margin: 0.8em 0;
     padding: 0.3em;
+    display: grid;
+    grid-template-columns: 1.5em auto 2em 2em;
 }
 
 .completed {
     color: var(--grey);
     text-decoration: line-through;
     text-decoration-color: var(--yellow);
+}
+
+.todo-text {
+    border-bottom: 1px solid transparent;
 }
 
 input[type="text"] {
@@ -100,7 +108,8 @@ input[type="text"]:focus {
 
 .inline-text-input {
     padding: 0;
-    width: 60%;
+    width: 95%;
+    /* width: 60%; */
 }
 
 footer {
@@ -110,13 +119,78 @@ footer {
     box-shadow: 0 8px 10px 5px var(--shadow);
     position: sticky;
     bottom: 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
+    padding: 1em;
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: repeat(5, 1fr)
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
 }
 
 p {
     margin: 0;
+}
+
+button {
+    font-size: 1em;
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    position: relative;
+    padding: 0;
+    transition: all 150ms ease-in-out;
+    color: #777;
+}
+
+footer button:after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--yellow);
+    position: absolute;
+    bottom: -0.1em;
+    transform: translateY(0.5em);
+    transition: all 150ms ease-in-out;
+    opacity: 0;
+}
+
+button:hover {
+    color: var(--black)
+}
+
+footer button:hover:after {
+    transform: translateY(0.1em);
+    opacity: 1;
+}
+
+
+button:focus {
+    outline: none;
+}
+
+.icon {
+    fill: var(--yellow);
+    height: 1em;
+    transition: all 150ms ease-in-out;
+}
+
+.pen:hover {
+    fill: var(--green);
+}
+
+.remove:hover {
+    fill: var(--red)
+}
+
+.check {
+    fill: var(--green);
+}
+
+.check:hover {
+    fill: var(--black)
 }

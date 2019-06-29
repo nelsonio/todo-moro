@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo, renameTodo } from '../store/actions.js';
 
+import { Pen, Remove, Check } from './icons';
+
 class Todo extends Component {
     state = {
         editable: false,
@@ -73,12 +75,19 @@ class Todo extends Component {
                         onKeyPress={this.handleKey}
                     />
                 ) : (
-                    <span onDoubleClick={this.toggleEditable}>{content}</span>
+                    <span
+                        className="todo-text"
+                        onDoubleClick={this.toggleEditable}
+                    >
+                        {content}
+                    </span>
                 )}
                 <button onClick={this.toggleEditable}>
-                    {editable ? 'OK' : 'Edit'}
+                    {editable ? <Check /> : <Pen />}
                 </button>
-                <button onClick={this.deleteTask}>X</button>
+                <button onClick={this.deleteTask}>
+                    <Remove />
+                </button>
             </li>
         );
     }
