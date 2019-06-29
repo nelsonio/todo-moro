@@ -5,6 +5,7 @@ body {
     --black: #000;
     --white: #fff;
     --grey: #aaa;
+    --shadow: rgba(0, 0, 0, 0.3);
 
     color: #333;
 
@@ -19,14 +20,14 @@ body {
 
     margin: 0;
     box-sizing: border-box;
-    min-height: 100vh;
     /* padding: 20vh 0; */
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr minmax(0, 17em) 1fr;
-    grid-template-rows: 5em auto;
+    grid-template-rows: 5em auto 2.7em;
+    min-height: 100vh;
 }
 
 header {
@@ -36,7 +37,7 @@ header {
     align-items: center;
     background-color: var(--black);
     color: var(--white);
-    box-shadow: 0 -5px 10px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -5px 10px 5px var(--shadow);
 }
 
 h1 {
@@ -100,4 +101,17 @@ input[type="text"]:focus {
 .inline-text-input {
     padding: 0;
     width: 60%;
+}
+
+footer {
+    grid-column: 1 / 4;
+    grid-row: -2 / -1;
+    background-color: var(--white);
+    box-shadow: 0 8px 10px 5px var(--shadow);
+    position: sticky;
+    bottom: 0;
+    font-size: 0.9em;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }

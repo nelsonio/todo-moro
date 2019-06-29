@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { fetchTodos } from '../store/actions.js';
 
 import NewTodo from './NewTodo.js';
-import CurrentTodos from './CurrentTodos';
+import CurrentTodos from './CurrentTodos.js';
+import Footer from './Footer.js';
 
 class Todos extends Component {
     componentDidMount() {
@@ -13,10 +14,13 @@ class Todos extends Component {
 
     render() {
         return this.props.todos.length > 0 ? (
-            <main>
-                <NewTodo />
-                <CurrentTodos todos={this.props.todos} />
-            </main>
+            <>
+                <main>
+                    <NewTodo />
+                    <CurrentTodos todos={this.props.todos} />
+                </main>
+                <Footer />
+            </>
         ) : (
             <main>Loading...</main>
         );
