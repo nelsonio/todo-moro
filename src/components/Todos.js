@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { fillTodos } from '../store/actions.js';
+import { fetchTodos } from '../store/actions.js';
 
 import NewTodo from './NewTodo.js';
 import CurrentTodos from './CurrentTodos';
 
 class Todos extends Component {
     componentDidMount() {
-        this.props.fillTodos();
+        this.props.fetchTodos();
     }
 
     render() {
@@ -29,5 +29,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { fillTodos }
+    { fetchTodos }
 )(Todos);

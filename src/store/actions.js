@@ -5,7 +5,7 @@ export const Types = {
     TOGGLE_TODO: 'TOGGLE_TODO',
 };
 
-export const fillTodos = () => dispatch => {
+export const fetchTodos = () => dispatch => {
     const url = 'http://localhost:8080/todos';
 
     fetch(url)
