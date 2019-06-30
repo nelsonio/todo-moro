@@ -47,6 +47,11 @@ class Todo extends Component {
         }
     };
 
+    focusLost = () => {
+        this.renameTask();
+        this.setState({ editable: false });
+    };
+
     toggleCompleted = () => {
         const { id, completed } = this.props.todo;
         this.props.toggleTodo(id, completed);
@@ -60,7 +65,7 @@ class Todo extends Component {
         const { completed } = this.props.todo;
         const { editable, content } = this.state;
         return (
-            <li className={completed ? 'completed' : ''}>
+            <li className={completed && !editable ? 'completed' : ''}>
                 <p onClick={this.toggleCompleted} className="toggler">
                     <input type="checkbox" defaultChecked={completed} />
                     {completed ? <CheckedCircle /> : <EmptyCircle />}
@@ -72,6 +77,7 @@ class Todo extends Component {
                         value={content}
                         className="inline-text-input"
                         onKeyPress={this.handleKey}
+                        onBlur={this.focusLost}
                     />
                 ) : (
                     <span

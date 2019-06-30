@@ -102,6 +102,7 @@ input[type="text"]::placeholder {
 input[type="text"]:focus {
     outline: none;
     border-bottom-color: var(--yellow);
+    text-decoration: none;
 }
 
 .new-todo {
@@ -127,7 +128,6 @@ input[type="text"]:focus {
 .inline-text-input {
     padding: 0 0 0.15em 0;
     width: 95%;
-    /* width: 60%; */
 }
 
 footer {
