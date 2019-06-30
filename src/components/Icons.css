@@ -2,6 +2,11 @@
     fill: var(--yellow);
     height: 1em;
     transition: all 150ms ease-in-out;
+    opacity: 0.5;
+}
+
+.icon:hover {
+    opacity: 0.9;
 }
 
 .pen:hover {
@@ -38,6 +43,7 @@
 
 .arrow {
     height: 0.8em;
+    opacity: 1;
 }
 
 .down {

@@ -27,7 +27,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr minmax(0, 30em) 1fr;
+    grid-template-columns: 1fr minmax(0, 26em) 1fr;
     grid-template-rows: 5em 1fr auto;
     grid-column-gap: 1em;
     min-height: 100vh;

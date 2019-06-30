@@ -70,7 +70,7 @@ footer button:disabled {
     color: var(--black);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 490px) {
     footer {
         font-size: .6em;
     }
