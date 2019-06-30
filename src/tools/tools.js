@@ -18,12 +18,12 @@ export const sortTodos = (todos, method, desc) => {
         let sorted = [];
         switch (method) {
             case sorting.BY_DATE:
-                sorted = todos.sort(
+                sorted = [...todos].sort(
                     (t1, t2) => t1.createdDate - t2.createdDate
                 );
                 break;
             case sorting.BY_ABC:
-                sorted = todos.sort((t1, t2) => {
+                sorted = [...todos].sort((t1, t2) => {
                     if (t1.text > t2.text) return 1;
                     return -1;
                 });
@@ -43,7 +43,6 @@ export const sortFilter = (todos, filter, method, desc) => {
         const filtered = filterTodos(todos, filter);
         const sorted = sortTodos(filtered, method, desc);
 
-        console.table(sorted);
         return sorted;
     }
 };
