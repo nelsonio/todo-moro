@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo } from '../../store/actions.js';
@@ -88,6 +89,12 @@ class Footer extends Component {
         );
     }
 }
+
+Footer.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    toggleTodo: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     todos: state.todos,

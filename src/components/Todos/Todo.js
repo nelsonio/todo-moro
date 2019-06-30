@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo, renameTodo } from '../../store/actions.js';
@@ -106,6 +107,13 @@ class Todo extends Component {
         );
     }
 }
+
+Todo.propTypes = {
+    todo: PropTypes.object.isRequired,
+    toggleTodo: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired,
+    renameTodo: PropTypes.func.isRequired,
+};
 
 export default connect(
     null,

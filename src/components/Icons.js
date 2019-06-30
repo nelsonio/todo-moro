@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Pen = () => (
     <svg
@@ -49,3 +50,7 @@ export const Arrow = ({ down }) => (
         <path d="M24 19H0L12 5l12 14z" />
     </svg>
 );
+
+Arrow.propTypes = {
+    down: PropTypes.bool,
+};

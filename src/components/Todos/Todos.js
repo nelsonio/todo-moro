@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { fetchTodos } from '../../store/actions.js';
@@ -31,6 +32,11 @@ class Todos extends Component {
         );
     }
 }
+
+Todos.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object),
+    fetchTodos: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     todos: sortFilter(

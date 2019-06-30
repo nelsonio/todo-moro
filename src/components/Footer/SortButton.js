@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { changeSort, changeAscDesc } from '../../store/actions.js';
@@ -31,6 +32,14 @@ class SortButton extends Component {
         );
     }
 }
+
+SortButton.propTypes = {
+    method: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    desc: PropTypes.bool.isRequired,
+    changeSort: PropTypes.func.isRequired,
+    changeAscDesc: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     type: state.sorter.type,

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { addTodo } from '../../store/actions.js';
@@ -42,6 +43,10 @@ class NewTodo extends Component {
         );
     }
 }
+
+NewTodo.propTypes = {
+    addTodo: PropTypes.func.isRequired,
+};
 
 export default connect(
     null,

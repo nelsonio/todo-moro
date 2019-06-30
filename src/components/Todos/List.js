@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Todo from './Todo.js';
 
@@ -9,5 +10,9 @@ const List = ({ todos }) => (
         ))}
     </ul>
 );
+
+List.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default List;

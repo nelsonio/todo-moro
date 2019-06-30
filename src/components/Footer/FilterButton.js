@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { setFilter } from '../../store/actions.js';
@@ -20,6 +21,12 @@ class FilterButton extends Component {
         );
     }
 }
+
+FilterButton.propTypes = {
+    action: PropTypes.string.isRequired,
+    active: PropTypes.string.isRequired,
+    setFilter: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
     active: state.filter,
