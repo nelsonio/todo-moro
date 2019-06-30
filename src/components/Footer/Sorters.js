@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { sorting } from '../store/types.js';
+import { sorting } from '../../store/types.js';
 
 import SortButton from './SortButton.js';
 
