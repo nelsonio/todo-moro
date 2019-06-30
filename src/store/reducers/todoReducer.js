@@ -1,5 +1,7 @@
 import { types } from '../types.js';
 
+// default state is null instead of [] because of loader
+// and "rendering" empty todo list
 function todos(state = null, action) {
     switch (action.type) {
         case types.FETCH_TODOS:

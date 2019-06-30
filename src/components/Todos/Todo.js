@@ -21,6 +21,7 @@ class Todo extends Component {
     }
 
     componentDidUpdate() {
+        // makes editable task active immediately
         if (this.focusHere.current !== null) {
             this.focusHere.current.focus();
         }
@@ -31,6 +32,7 @@ class Todo extends Component {
     };
 
     renameTask = () => {
+        // removes spaces from end so just spaces or empty can't be sent
         const text = this.state.content.trimRight();
 
         if (text.length > 0) {

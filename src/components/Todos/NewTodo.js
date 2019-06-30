@@ -16,6 +16,7 @@ class NewTodo extends Component {
     };
 
     handleKey = e => {
+        // removes spaces from end so just spaces or empty can't be sent
         const text = this.state.text.trimRight();
 
         if (e.key === 'Enter') {
