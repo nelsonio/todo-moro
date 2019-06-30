@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 
-import TodoMain from './components/Todos/TodoMain.js';
+import TodosMain from './components/Todos/TodosMain.js';
 import Header from './components/Header.js';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Header />
-                <TodoMain />
+                <TodosMain />
             </Provider>
         );
     }

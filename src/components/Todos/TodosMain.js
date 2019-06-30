@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import './TodoMain.css';
+import './TodosMain.css';
 
 import { connect } from 'react-redux';
 import { fetchTodos } from '../../store/actions/';
@@ -14,7 +14,7 @@ import Footer from '../Footer/Footer.js';
 import Loader from '../Loader.js';
 import ErrorInfo from './ErrorInfo.js';
 
-class TodoMain extends Component {
+class TodosMain extends Component {
     componentDidMount() {
         this.props.fetchTodos();
     }
@@ -46,7 +46,7 @@ class TodoMain extends Component {
     }
 }
 
-TodoMain.propTypes = {
+TodosMain.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.object),
     fetchTodos: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired,
@@ -65,4 +65,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { fetchTodos }
-)(TodoMain);
+)(TodosMain);
