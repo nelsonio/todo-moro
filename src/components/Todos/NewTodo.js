@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './NewTodo.css';
 
 import { connect } from 'react-redux';
-import { addTodo } from '../../store/actions.js';
+import { addTodo } from '../../store/actions/';
 
 class NewTodo extends Component {
     state = {

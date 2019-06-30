@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { setFilter } from '../../store/actions.js';
+import { setFilter } from '../../store/actions/';
 
 class FilterButton extends Component {
     handleClick = e => {

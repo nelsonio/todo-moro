@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Footer.css';
 
 import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../../store/actions.js';
+import { toggleTodo, deleteTodo } from '../../store/actions/';
 
 import Stats from './Stats.js';
 import Filters from './Filters.js';

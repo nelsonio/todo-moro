@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { changeSort, changeAscDesc } from '../../store/actions.js';
+import { changeSort, changeAscDesc } from '../../store/actions/';
 
 import { Arrow } from '../Icons.js';
 

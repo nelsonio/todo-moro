@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo, renameTodo } from '../../store/actions.js';
+import { toggleTodo, deleteTodo, renameTodo } from '../../store/actions/';
 
 import { Pen, Remove, Check, EmptyCircle, CheckedCircle } from '../Icons.js';
 

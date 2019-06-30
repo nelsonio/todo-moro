@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Todos.css';
 
 import { connect } from 'react-redux';
-import { fetchTodos } from '../../store/actions.js';
+import { fetchTodos } from '../../store/actions/';
 
 import { sortFilter } from '../../tools/tools.js';
 
