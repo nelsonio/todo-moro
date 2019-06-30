@@ -1,0 +1,21 @@
+.error-info {
+    font-size: 0.9em;
+
+    grid-column: 1 / 4;
+    grid-row: -2 / -1;
+
+    padding: 2em;
+    text-align: center;
+
+    background-color: var(--red);
+    color: var(--white);
+    box-shadow: 0 3px 10px 0 var(--shadow);
+}
+
+.error-info h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 .5em 0;
+    font-weight: normal;
+}

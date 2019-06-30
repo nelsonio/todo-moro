@@ -21,7 +21,7 @@ const addTodo = text => dispatch => {
             });
         })
         .catch(e => {
-            const desc = "Task wasn't added";
+            const desc = "Task wasn't added. Try again later.";
             console.error(desc);
             dispatch(setError(desc));
         });

@@ -3,8 +3,6 @@ footer {
 
     grid-column: 1 / 4;
     grid-row: -2 / -1;
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
 
     position: sticky;
     bottom: 0;
@@ -14,6 +12,9 @@ footer {
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(6, auto);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+
     overflow: hidden;
 
     background-color: var(--white);

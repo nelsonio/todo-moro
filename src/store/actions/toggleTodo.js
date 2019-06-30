@@ -21,7 +21,7 @@ const toggleTodo = (id, completed) => dispatch => {
             })
         )
         .catch(e => {
-            const desc = "Task couldn't be updated";
+            const desc = "Task couldn't be updated. Try again later.";
             console.error(desc);
             dispatch(setError(desc));
         });

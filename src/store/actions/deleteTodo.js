@@ -17,7 +17,7 @@ const deleteTodo = id => dispatch => {
             })
         )
         .catch(e => {
-            const desc = "Task wasn't deleted";
+            const desc = "Task wasn't deleted. Try again later.";
             console.error(desc);
             dispatch(setError(desc));
         });

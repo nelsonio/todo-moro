@@ -21,7 +21,7 @@ const renameTodo = (id, text) => dispatch => {
             });
         })
         .catch(e => {
-            const desc = "Task wasn't really updated";
+            const desc = "Task wasn't really updated. Try again later.";
             console.error(desc);
             dispatch(setError(desc));
         });

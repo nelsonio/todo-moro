@@ -12,6 +12,7 @@ import NewTodo from './NewTodo.js';
 import List from './List.js';
 import Footer from '../Footer/Footer.js';
 import Loader from '../Loader.js';
+import ErrorInfo from './ErrorInfo.js';
 
 class TodoMain extends Component {
     componentDidMount() {
@@ -19,18 +20,25 @@ class TodoMain extends Component {
     }
 
     render() {
-        console.log(this.props.errors);
         return Array.isArray(this.props.todos) ? (
-            <>
+            <React.Fragment>
                 <main>
                     <NewTodo />
                     <List todos={this.props.todos} />
                 </main>
-                <Footer />
-            </>
+                {this.props.errors.any ? (
+                    <ErrorInfo description={this.props.errors.description} />
+                ) : (
+                    <Footer />
+                )}
+            </React.Fragment>
         ) : (
             <main>
-                <Loader />
+                {this.props.errors.any ? (
+                    <ErrorInfo description={this.props.errors.description} />
+                ) : (
+                    <Loader />
+                )}
             </main>
         );
     }
@@ -39,6 +47,7 @@ class TodoMain extends Component {
 TodoMain.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.object),
     fetchTodos: PropTypes.func.isRequired,
+    errors: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

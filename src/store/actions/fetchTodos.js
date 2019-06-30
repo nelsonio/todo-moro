@@ -13,7 +13,8 @@ const fetchTodos = () => dispatch => {
             })
         )
         .catch(e => {
-            const desc = "Data couldn't be downloaded from server";
+            const desc =
+                "Data couldn't be downloaded from server. Try again later.";
             console.error(desc);
             dispatch(setError(desc));
         });
