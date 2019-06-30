@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchTodos } from '../store/actions.js';
 
 import NewTodo from './NewTodo.js';
-import CurrentTodos from './CurrentTodos.js';
+import List from './List.js';
 import Footer from './Footer.js';
 
 class Todos extends Component {
@@ -17,7 +17,7 @@ class Todos extends Component {
             <>
                 <main>
                     <NewTodo />
-                    <CurrentTodos todos={this.props.todos} />
+                    <List todos={this.props.todos} />
                 </main>
                 <Footer />
             </>
