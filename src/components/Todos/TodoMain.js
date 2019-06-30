@@ -20,22 +20,24 @@ class TodoMain extends Component {
     }
 
     render() {
-        return Array.isArray(this.props.todos) ? (
+        const { todos, errors } = this.props;
+
+        return Array.isArray(todos) ? (
             <React.Fragment>
                 <main>
                     <NewTodo />
-                    <List todos={this.props.todos} />
+                    <List todos={todos} />
                 </main>
-                {this.props.errors.any ? (
-                    <ErrorInfo description={this.props.errors.description} />
+                {errors.any ? (
+                    <ErrorInfo description={errors.description} />
                 ) : (
                     <Footer />
                 )}
             </React.Fragment>
         ) : (
             <main>
-                {this.props.errors.any ? (
-                    <ErrorInfo description={this.props.errors.description} />
+                {errors.any ? (
+                    <ErrorInfo description={errors.description} />
                 ) : (
                     <Loader />
                 )}
