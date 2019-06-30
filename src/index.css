@@ -142,12 +142,16 @@ footer {
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, auto);
     overflow: hidden;
 }
 
 p {
     margin: 0;
+}
+
+.stats {
+    margin: 0 0.3em;
 }
 
 button {
@@ -177,18 +181,32 @@ footer button:after {
     opacity: 0;
 }
 
+footer button {
+    margin: 0 0.3em;
+}
+
 button:hover {
     color: var(--black)
 }
 
-footer button:hover:after {
+footer button:hover:after,
+.active:after {
     transform: translateY(0.1em);
     opacity: 1;
 }
 
-
 button:focus {
     outline: none;
+}
+
+.sort button,
+.filters button {
+    color: var(--grey);
+}
+
+.sort .active,
+.filters .active {
+    color: var(--black);
 }
 
 .icon {

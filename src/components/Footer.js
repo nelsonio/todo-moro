@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo } from '../store/actions.js';
 
+import Filters from './Filters.js';
+
 class Footer extends Component {
     deleteCompleted = () => {
         this.props.todos
@@ -37,13 +39,24 @@ class Footer extends Component {
         );
         return (
             <footer>
-                <p>
+                <p className="stats">
                     {completed} completed, {left} left
                 </p>
-                <button onClick={this.deleteCompleted}>Clear comleted</button>
-                <button onClick={this.markAllCompleted}>
-                    Mark all completed
-                </button>
+                <p>
+                    <button onClick={this.deleteCompleted}>
+                        Clear completed
+                    </button>
+                </p>
+                <p>
+                    <button onClick={this.markAllCompleted}>
+                        Complete all
+                    </button>
+                </p>
+                <Filters />
+                <p className="sort">
+                    <button>Abc</button>
+                    <button className="active">Date</button>
+                </p>
             </footer>
         );
     }
