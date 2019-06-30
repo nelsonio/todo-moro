@@ -22,6 +22,8 @@ class TodosMain extends Component {
     render() {
         const { todos, errors } = this.props;
 
+        // default state in todos is null because of this check
+        // you can load empty todo list this way
         return Array.isArray(todos) ? (
             <React.Fragment>
                 <main>

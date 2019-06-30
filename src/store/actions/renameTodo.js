@@ -21,6 +21,7 @@ const renameTodo = (id, text) => dispatch => {
             });
         })
         .catch(e => {
+            // task is still shown on the page with new text
             const desc = "Task wasn't really updated. Try again later.";
             console.error(desc);
             dispatch(setError(desc));
