@@ -165,7 +165,7 @@ button {
     position: relative;
     padding: 0;
     transition: all 150ms ease-in-out;
-    color: #777;
+    color: inherit;
 }
 
 footer button:after {
@@ -185,14 +185,19 @@ footer button {
     margin: 0 0.3em;
 }
 
-button:hover {
+button:not(:disabled):hover {
     color: var(--black)
 }
 
-footer button:hover:after,
+footer button:not(:disabled):hover:after,
 .active:after {
     transform: translateY(0.1em);
     opacity: 1;
+}
+
+footer button:disabled {
+    cursor: default;
+    color: var(--grey)
 }
 
 button:focus {
