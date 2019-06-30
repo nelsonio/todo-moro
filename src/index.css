@@ -68,7 +68,8 @@ ul li {
     margin: 0.8em 0;
     padding: 0.3em;
     display: grid;
-    grid-template-columns: 1.5em auto 2em 2em;
+    align-items: center;
+    grid-template-columns: 2em auto 2em 2em;
 }
 
 .completed {
@@ -79,6 +80,7 @@ ul li {
 
 .todo-text {
     border-bottom: 1px solid transparent;
+    padding: 0 0 0.15em 0;
 }
 
 input[type="text"] {
@@ -105,7 +107,7 @@ input[type="text"]:focus {
 .new-todo {
     padding: 0.5em 0.3em;
     width: 100%;
-    margin-bottom: 0.3em;
+    margin: 0.3em 0;
 }
 
 .new-todo+label {
@@ -123,7 +125,7 @@ input[type="text"]:focus {
 }
 
 .inline-text-input {
-    padding: 0;
+    padding: 0 0 0.15em 0;
     width: 95%;
     /* width: 60%; */
 }
@@ -230,4 +232,8 @@ input[type="checkbox"] {
 
 .checked-circle:hover {
     fill: var(--red);
+}
+
+::selection {
+    background-color: var(--yellow);
 }
