@@ -1,4 +1,5 @@
 import { types } from '../types.js';
+import setError from './setError.js';
 
 const renameTodo = (id, text) => dispatch => {
     const url = `http://localhost:8080/todos/${id}`;
@@ -19,7 +20,11 @@ const renameTodo = (id, text) => dispatch => {
                 text,
             });
         })
-        .catch(e => console.error("Task wasn't updated"));
+        .catch(e => {
+            const desc = "Task wasn't really updated";
+            console.error(desc);
+            dispatch(setError(desc));
+        });
 };
 
 export default renameTodo;

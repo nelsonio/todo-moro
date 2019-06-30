@@ -19,6 +19,7 @@ class TodoMain extends Component {
     }
 
     render() {
+        console.log(this.props.errors);
         return Array.isArray(this.props.todos) ? (
             <>
                 <main>
@@ -47,6 +48,7 @@ const mapStateToProps = state => ({
         state.sorter.type,
         state.sorter.desc
     ),
+    errors: state.errors,
 });
 
 export default connect(

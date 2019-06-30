@@ -7,6 +7,7 @@ export const types = {
     SET_FILTER: 'SET_FILTER',
     CHANGE_SORT: 'CHANGE_SORT',
     ASC_DESC: 'ASC_DESC',
+    SET_ERROR: 'SET_ERROR',
 };
 
 export const filters = {

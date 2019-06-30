@@ -1,4 +1,5 @@
 import { types } from '../types.js';
+import setError from './setError.js';
 
 const deleteTodo = id => dispatch => {
     const url = `http://localhost:8080/todos/${id}`;
@@ -15,7 +16,11 @@ const deleteTodo = id => dispatch => {
                 id,
             })
         )
-        .catch(e => console.error("Task wasn't deleted"));
+        .catch(e => {
+            const desc = "Task wasn't deleted";
+            console.error(desc);
+            dispatch(setError(desc));
+        });
 };
 
 export default deleteTodo;

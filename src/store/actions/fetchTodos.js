@@ -1,4 +1,5 @@
 import { types } from '../types.js';
+import setError from './setError.js';
 
 const fetchTodos = () => dispatch => {
     const url = 'http://localhost:8080/todos';
@@ -11,7 +12,11 @@ const fetchTodos = () => dispatch => {
                 todos,
             })
         )
-        .catch(e => console.error("Data couldn't be downloaded from server"));
+        .catch(e => {
+            const desc = "Data couldn't be downloaded from server";
+            console.error(desc);
+            dispatch(setError(desc));
+        });
 };
 
 export default fetchTodos;

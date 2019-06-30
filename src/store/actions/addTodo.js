@@ -1,4 +1,5 @@
 import { types } from '../types.js';
+import setError from './setError.js';
 
 const addTodo = text => dispatch => {
     const url = 'http://localhost:8080/todos';
@@ -19,7 +20,11 @@ const addTodo = text => dispatch => {
                 data,
             });
         })
-        .catch(e => console.error("Task wasn't added"));
+        .catch(e => {
+            const desc = "Task wasn't added";
+            console.error(desc);
+            dispatch(setError(desc));
+        });
 };
 
 export default addTodo;

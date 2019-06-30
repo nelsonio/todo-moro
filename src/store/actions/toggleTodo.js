@@ -1,4 +1,5 @@
 import { types } from '../types.js';
+import setError from './setError.js';
 
 const toggleTodo = (id, completed) => dispatch => {
     const url = completed
@@ -19,7 +20,11 @@ const toggleTodo = (id, completed) => dispatch => {
                 data,
             })
         )
-        .catch(e => console.error("Task wasn't updated"));
+        .catch(e => {
+            const desc = "Task couldn't be updated";
+            console.error(desc);
+            dispatch(setError(desc));
+        });
 };
 
 export default toggleTodo;
