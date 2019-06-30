@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo, renameTodo } from '../../store/actions/';
 
-import { Pen, Remove, Check, EmptyCircle, CheckedCircle } from '../Icons.js';
+import { Pen, Remove, Check } from '../Icons.js';
+import Checkbox from './Checkbox.js';
+import TodoText from './TodoText.js';
 
 class Todo extends Component {
     state = {
@@ -73,34 +75,22 @@ class Todo extends Component {
     render() {
         const { completed } = this.props.todo;
         const { editable, content } = this.state;
+
         return (
             <li className={completed && !editable ? 'completed' : ''}>
-                <p onClick={this.toggleCompleted} className="toggler">
-                    <input
-                        type="checkbox"
-                        defaultChecked={completed}
-                        className="invisible-check"
-                    />
-                    {completed ? <CheckedCircle /> : <EmptyCircle />}
-                </p>
-                {editable ? (
-                    <input
-                        type="text"
-                        value={content}
-                        onChange={this.handleChange}
-                        className="inline-text-input"
-                        onKeyPress={this.handleKey}
-                        onBlur={this.focusLost}
-                        ref={this.focusHere}
-                    />
-                ) : (
-                    <span
-                        className="todo-text"
-                        onDoubleClick={this.toggleEditable}
-                    >
-                        {content}
-                    </span>
-                )}
+                <Checkbox
+                    toggleCompleted={this.toggleCompleted}
+                    completed={completed}
+                />
+                <TodoText
+                    editable={editable}
+                    content={content}
+                    handleChange={this.handleChange}
+                    handleKey={this.handleKey}
+                    focusLost={this.focusLost}
+                    focusHere={this.focusHere}
+                    toggleEditable={this.toggleEditable}
+                />
                 <button onClick={this.toggleEditable}>
                     {editable ? <Check /> : <Pen />}
                 </button>
