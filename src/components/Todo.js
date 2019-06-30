@@ -11,8 +11,16 @@ class Todo extends Component {
         content: '',
     };
 
+    focusHere = React.createRef();
+
     componentDidMount() {
         this.setState({ content: this.props.todo.text });
+    }
+
+    componentDidUpdate() {
+        if (this.focusHere.current !== null) {
+            this.focusHere.current.focus();
+        }
     }
 
     handleChange = e => {
@@ -78,6 +86,7 @@ class Todo extends Component {
                         className="inline-text-input"
                         onKeyPress={this.handleKey}
                         onBlur={this.focusLost}
+                        ref={this.focusHere}
                     />
                 ) : (
                     <span
