@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { setFilter } from '../store/actions.js';
+import { setFilter } from '../../store/actions.js';
 
 class FilterButton extends Component {
     handleClick = e => {

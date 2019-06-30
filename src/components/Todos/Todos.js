@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { fetchTodos } from '../store/actions.js';
+import { fetchTodos } from '../../store/actions.js';
 
-import { sortFilter } from '../tools/tools.js';
+import { sortFilter } from '../../tools/tools.js';
 
 import NewTodo from './NewTodo.js';
 import List from './List.js';
-import Footer from './Footer.js';
-import Loader from './Loader';
+import Footer from '../Footer/Footer.js';
+import Loader from '../Loader.js';
 
 class Todos extends Component {
     componentDidMount() {

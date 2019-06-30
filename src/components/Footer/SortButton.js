@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { changeSort, changeAscDesc } from '../store/actions.js';
+import { changeSort, changeAscDesc } from '../../store/actions.js';
 
-import { Arrow } from './Icons.js';
+import { Arrow } from '../Icons.js';
 
 class SortButton extends Component {
     handleClick = () => {

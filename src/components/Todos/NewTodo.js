@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { addTodo } from '../store/actions.js';
+import { addTodo } from '../../store/actions.js';
 
 class NewTodo extends Component {
     state = {
