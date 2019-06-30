@@ -18,9 +18,7 @@ class SortButton extends Component {
 
     render() {
         const { children, method, type, desc } = this.props;
-
         const active = type === method;
-
         const arrow = !active ? '' : desc ? <Arrow down /> : <Arrow />;
 
         return (

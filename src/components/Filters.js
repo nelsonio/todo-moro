@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { filters } from '../store/actions.js';
+import { filters } from '../store/types.js';
 
 import FilterButton from './FilterButton.js';
 

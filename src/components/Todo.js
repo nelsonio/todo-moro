@@ -81,8 +81,8 @@ class Todo extends Component {
                 {editable ? (
                     <input
                         type="text"
-                        onChange={this.handleChange}
                         value={content}
+                        onChange={this.handleChange}
                         className="inline-text-input"
                         onKeyPress={this.handleKey}
                         onBlur={this.focusLost}

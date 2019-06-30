@@ -1,6 +1,6 @@
-import { filters, sorting } from '../store/actions.js';
+import { filters, sorting } from '../store/types.js';
 
-export const filterTodos = (todos, filter) => {
+const filterTodos = (todos, filter) => {
     if (todos !== null) {
         switch (filter) {
             case filters.SHOW_ACTIVE:
@@ -13,7 +13,7 @@ export const filterTodos = (todos, filter) => {
     }
 };
 
-export const sortTodos = (todos, method, desc) => {
+const sortTodos = (todos, method, desc) => {
     if (todos !== null) {
         let sorted = [];
         switch (method) {

@@ -278,7 +278,7 @@ input[type="checkbox"] {
     justify-content: center;
 }
 
-.loader span {
+.dot {
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -288,15 +288,15 @@ input[type="checkbox"] {
     animation: loading 600ms ease-in-out alternate infinite;
 }
 
-.loader span:nth-of-type(1) {
+.dot:nth-of-type(1) {
     animation-delay: -900ms;
 }
 
-.loader span:nth-of-type(2) {
+.dot:nth-of-type(2) {
     animation-delay: -600ms;
 }
 
-.loader span:nth-of-type(3) {
+.dot:nth-of-type(3) {
     animation-delay: -300ms;
 }
 

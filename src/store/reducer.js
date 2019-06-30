@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { types, filters, sorting } from './actions.js';
+import { types, filters, sorting } from './types.js';
 
 function todos(state = null, action) {
     switch (action.type) {

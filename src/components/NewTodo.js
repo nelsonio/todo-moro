@@ -31,8 +31,8 @@ class NewTodo extends Component {
                 <input
                     type="text"
                     placeholder="Add new task"
-                    onChange={this.handleChange}
                     value={this.state.text}
+                    onChange={this.handleChange}
                     onKeyPress={this.handleKey}
                     className="new-todo"
                     id="new-todo"
