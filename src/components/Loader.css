@@ -1,0 +1,43 @@
+.loader {
+    font-size: 1em;
+    padding-top: 15vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 0 0.5em;
+    background-color: var(--yellow);
+    animation: loading 600ms ease-in-out alternate infinite;
+}
+
+.dot:nth-of-type(1) {
+    animation-delay: -900ms;
+}
+
+.dot:nth-of-type(2) {
+    animation-delay: -600ms;
+}
+
+.dot:nth-of-type(3) {
+    animation-delay: -300ms;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+}

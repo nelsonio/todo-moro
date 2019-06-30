@@ -76,7 +76,11 @@ class Todo extends Component {
         return (
             <li className={completed && !editable ? 'completed' : ''}>
                 <p onClick={this.toggleCompleted} className="toggler">
-                    <input type="checkbox" defaultChecked={completed} />
+                    <input
+                        type="checkbox"
+                        defaultChecked={completed}
+                        className="invisible-check"
+                    />
                     {completed ? <CheckedCircle /> : <EmptyCircle />}
                 </p>
                 {editable ? (

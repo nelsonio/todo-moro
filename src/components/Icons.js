@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './Icons.css';
+
 export const Pen = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,45 @@
+.icon {
+    fill: var(--yellow);
+    height: 1em;
+    transition: all 150ms ease-in-out;
+}
+
+.pen:hover {
+    fill: var(--green);
+}
+
+.remove:hover {
+    fill: var(--red)
+}
+
+.check {
+    fill: var(--green);
+}
+
+.check:hover {
+    fill: var(--black)
+}
+
+.toggler {
+    cursor: pointer;
+}
+
+.empty-circle {
+    fill: #ddd;
+}
+
+.empty-circle:hover {
+    fill: var(--green);
+}
+
+.checked-circle:hover {
+    fill: var(--red);
+}
+
+.arrow {
+    height: 0.8em;
+}
+
+.down {
+    transform: scaleY(-1);
+}

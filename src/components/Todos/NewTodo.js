@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './NewTodo.css';
+
 import { connect } from 'react-redux';
 import { addTodo } from '../../store/actions.js';
 

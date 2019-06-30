@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './Todos.css';
+
 import { connect } from 'react-redux';
 import { fetchTodos } from '../../store/actions.js';
 

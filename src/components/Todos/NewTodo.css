@@ -1,0 +1,19 @@
+.new-todo {
+    width: 100%;
+    padding: 0.5em 0.3em;
+    margin: 0.3em 0;
+}
+
+.new-todo+label {
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0.3em 0 0 30%;
+    color: var(--grey);
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+}
+
+.new-todo:focus+label {
+    opacity: 1;
+}

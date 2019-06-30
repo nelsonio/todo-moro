@@ -1,0 +1,40 @@
+main {
+    grid-column-start: 2;
+    padding: 2em 0;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-list li {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2em auto 2em 2em;
+
+    margin: 0.8em 0;
+    padding: 0.3em;
+}
+
+.completed {
+    color: var(--grey);
+    text-decoration: line-through;
+    text-decoration-color: var(--yellow);
+}
+
+.todo-text {
+    border-bottom: 1px solid transparent;
+    padding: 0 0 0.15em 0;
+}
+
+.inline-text-input {
+    width: 95%;
+    padding: 0 0 0.15em 0;
+}
+
+.invisible-check {
+    display: none;
+    cursor: pointer;
+}

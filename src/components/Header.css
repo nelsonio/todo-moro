@@ -1,0 +1,21 @@
+header {
+    grid-column: 1 / 4;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    background-color: var(--black);
+    color: var(--white);
+    box-shadow: 0 -5px 10px 5px var(--shadow);
+}
+
+h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.yellow {
+    color: var(--yellow);
+}
