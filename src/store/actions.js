@@ -11,7 +11,7 @@ export const fetchTodos = () => dispatch => {
                 todos,
             })
         )
-        .catch(e => console.error('Something went wrong...'));
+        .catch(e => console.error("Data couldn't be downloaded from server"));
 };
 
 export const addTodo = text => dispatch => {
@@ -33,7 +33,7 @@ export const addTodo = text => dispatch => {
                 data,
             });
         })
-        .catch(e => console.error('Something went wrong...'));
+        .catch(e => console.error("Task wasn't added"));
 };
 
 export const deleteTodo = id => dispatch => {
@@ -51,7 +51,7 @@ export const deleteTodo = id => dispatch => {
                 id,
             })
         )
-        .catch(e => console.error('Something went wrong...'));
+        .catch(e => console.error("Task wasn't deleted"));
 };
 
 export const toggleTodo = (id, completed) => dispatch => {
@@ -73,7 +73,7 @@ export const toggleTodo = (id, completed) => dispatch => {
                 data,
             })
         )
-        .catch(e => console.error('Something went wrong...'));
+        .catch(e => console.error("Task wasn't updated"));
 };
 
 export const renameTodo = (id, text) => dispatch => {
@@ -95,7 +95,7 @@ export const renameTodo = (id, text) => dispatch => {
                 text,
             });
         })
-        .catch(e => console.error('Something went wrong...'));
+        .catch(e => console.error("Task wasn't updated"));
 };
 
 export const setFilter = filter => ({
