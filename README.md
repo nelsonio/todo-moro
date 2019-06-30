@@ -1,1 +1,1 @@
-Entry assignment from MoroSystems
+Entry assignment from MoroSystems.
