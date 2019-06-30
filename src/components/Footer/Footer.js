@@ -75,11 +75,16 @@ class Footer extends Component {
                 <button
                     onClick={this.deleteCompleted}
                     disabled={completed === 0}
+                    className="action-button"
                 >
                     Remove completed
                 </button>
 
-                <button onClick={this.markAllCompleted} disabled={left === 0}>
+                <button
+                    onClick={this.markAllCompleted}
+                    disabled={left === 0}
+                    className="action-button"
+                >
                     Complete all
                 </button>
 

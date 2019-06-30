@@ -29,6 +29,7 @@ body {
     display: grid;
     grid-template-columns: 1fr minmax(0, 30em) 1fr;
     grid-template-rows: 5em 1fr auto;
+    grid-column-gap: 1em;
     min-height: 100vh;
     background-image: linear-gradient(155deg, rgba(0, 0, 0, 0), rgba(50, 50, 50, 0.05));
 }
@@ -139,15 +140,17 @@ footer {
 
     grid-column: 1 / 4;
     grid-row: -2 / -1;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
 
     position: sticky;
     bottom: 0;
-    padding: 1em;
+    padding: 1.2em;
 
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(6, auto);
     overflow: hidden;
 
     background-color: var(--white);
@@ -160,6 +163,7 @@ p {
 
 .stats {
     margin: 0 0.3em;
+    grid-column: 1 / span 2;
 }
 
 button {
@@ -318,5 +322,22 @@ input[type="checkbox"] {
     100% {
         opacity: 0.9;
         transform: scale(1);
+    }
+}
+
+@media (max-width: 450px) {
+    footer {
+        font-size: .6em;
+    }
+}
+
+@media (max-width: 800px) {
+    .action-button {
+        grid-column: span 2;
+    }
+
+    .sort,
+    .filters {
+        grid-column: span 3;
     }
 }
