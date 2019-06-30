@@ -35,7 +35,9 @@ class NewTodo extends Component {
                     value={this.state.text}
                     onKeyPress={this.handleKey}
                     className="new-todo"
+                    id="new-todo"
                 />
+                <label htmlFor="new-todo">Press Enter to add</label>
             </form>
         );
     }
