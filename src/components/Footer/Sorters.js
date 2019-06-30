@@ -8,7 +8,7 @@ class Sorters extends Component {
     render() {
         return (
             <p className="sort">
-                <SortButton method={sorting.BY_ABC}>Abc</SortButton>
+                <SortButton method={sorting.BY_ABC}>abc</SortButton>
                 <SortButton method={sorting.BY_DATE}>Date</SortButton>
             </p>
         );
