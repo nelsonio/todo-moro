@@ -39,3 +39,13 @@ export const CheckedCircle = () => (
         <path d="M10 18l-6-6 1-2 5 5 9-10 1 2m-8-7C5 0 0 5 0 12s5 12 12 12 12-5 12-12S19 0 12 0z" />
     </svg>
 );
+
+export const Arrow = ({ down }) => (
+    <svg
+        version="1"
+        viewBox="0 0 24 24"
+        className={`icon arrow ${down ? ' down' : ''}`}
+    >
+        <path d="M24 19H0L12 5l12 14z" />
+    </svg>
+);

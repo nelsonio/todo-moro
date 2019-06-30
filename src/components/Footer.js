@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { toggleTodo, deleteTodo } from '../store/actions.js';
 
 import Filters from './Filters.js';
+import Sorters from './Sorters.js';
 
 class Footer extends Component {
     deleteCompleted = () => {
@@ -59,10 +60,7 @@ class Footer extends Component {
                     </button>
                 </p>
                 <Filters />
-                <p className="sort">
-                    <button>Abc</button>
-                    <button className="active">Date</button>
-                </p>
+                <Sorters />
             </footer>
         );
     }

@@ -236,6 +236,14 @@ button:focus {
     fill: var(--black)
 }
 
+.arrow {
+    height: 0.8em;
+}
+
+.down {
+    transform: scaleY(-1);
+}
+
 input[type="checkbox"] {
     display: none;
     cursor: pointer;

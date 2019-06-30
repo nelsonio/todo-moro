@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { types, filters } from './actions.js';
+import { types, filters, sorting } from './actions.js';
 
 function todos(state = null, action) {
     switch (action.type) {
@@ -43,9 +43,29 @@ function filter(state = filters.SHOW_ALL, action) {
     }
 }
 
+function sorter(state = { type: sorting.BY_DATE, desc: true }, action) {
+    switch (action.type) {
+        case types.CHANGE_SORT:
+            return {
+                ...state,
+                type: action.sort,
+            };
+
+        case types.ASC_DESC:
+            return {
+                ...state,
+                desc: action.ad,
+            };
+
+        default:
+            return state;
+    }
+}
+
 const todoApp = combineReducers({
     todos,
     filter,
+    sorter,
 });
 
 export default todoApp;

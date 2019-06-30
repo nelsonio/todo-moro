@@ -5,12 +5,19 @@ export const types = {
     TOGGLE_TODO: 'TOGGLE_TODO',
     RENAME_TODO: 'RENAME_TODO',
     SET_FILTER: 'SET_FILTER',
+    CHANGE_SORT: 'CHANGE_SORT',
+    ASC_DESC: 'ASC_DESC',
 };
 
 export const filters = {
     SHOW_ALL: 'SHOW_ALL',
     SHOW_ACTIVE: 'SHOW_ACTIVE',
     SHOW_COMPLETED: 'SHOW_COMPLETED',
+};
+
+export const sorting = {
+    BY_DATE: 'BY_DATE',
+    BY_ABC: 'BY_ABC',
 };
 
 export const fetchTodos = () => dispatch => {
@@ -114,4 +121,14 @@ export const renameTodo = (id, text) => dispatch => {
 export const setFilter = filter => ({
     type: types.SET_FILTER,
     filter,
+});
+
+export const changeSort = sort => ({
+    type: types.CHANGE_SORT,
+    sort,
+});
+
+export const changeAscDesc = ad => ({
+    type: types.ASC_DESC,
+    ad,
 });

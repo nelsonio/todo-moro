@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTodos } from '../store/actions.js';
 
-import { filterTodos } from '../tools/filterTodos.js';
+import { sortFilter } from '../tools/tools.js';
 
 import NewTodo from './NewTodo.js';
 import List from './List.js';
@@ -33,7 +33,12 @@ class Todos extends Component {
 }
 
 const mapStateToProps = state => ({
-    todos: filterTodos(state.todos, state.filter),
+    todos: sortFilter(
+        state.todos,
+        state.filter,
+        state.sorter.type,
+        state.sorter.desc
+    ),
 });
 
 export default connect(
