@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 
+import { filters } from '../store/actions.js';
+
+import FilterButton from './FilterButton.js';
+
 class Filters extends Component {
     render() {
         return (
             <p className="filters">
-                <button className="active">All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <FilterButton action={filters.SHOW_ALL}>All</FilterButton>
+                <FilterButton action={filters.SHOW_ACTIVE}>Active</FilterButton>
+                <FilterButton action={filters.SHOW_COMPLETED}>
+                    Completed
+                </FilterButton>
             </p>
         );
     }

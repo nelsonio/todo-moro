@@ -1,25 +1,25 @@
 import { combineReducers } from 'redux';
-import { Types } from './actions.js';
+import { types, filters } from './actions.js';
 
 function todos(state = null, action) {
     switch (action.type) {
-        case Types.FETCH_TODOS:
+        case types.FETCH_TODOS:
             return action.todos;
 
-        case Types.ADD_TODO:
+        case types.ADD_TODO:
             return [action.data, ...state];
 
-        case Types.TOGGLE_TODO:
+        case types.TOGGLE_TODO:
             return [
                 ...state.map(todo =>
                     todo.id === action.data.id ? action.data : todo
                 ),
             ];
 
-        case Types.DELETE_TODO:
+        case types.DELETE_TODO:
             return [...state.filter(todo => todo.id !== action.id)];
 
-        case Types.RENAME_TODO:
+        case types.RENAME_TODO:
             return [
                 ...state.map(todo =>
                     todo.id === action.id
@@ -33,9 +33,19 @@ function todos(state = null, action) {
     }
 }
 
+function filter(state = filters.SHOW_ALL, action) {
+    switch (action.type) {
+        case types.SET_FILTER:
+            return action.filter;
+
+        default:
+            return state;
+    }
+}
+
 const todoApp = combineReducers({
     todos,
-    // filter,
+    filter,
 });
 
 export default todoApp;

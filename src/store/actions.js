@@ -1,9 +1,16 @@
-export const Types = {
+export const types = {
     FETCH_TODOS: 'FETCH_TODOS',
     ADD_TODO: 'ADD_TODO',
     DELETE_TODO: 'DELETE_TODO',
     TOGGLE_TODO: 'TOGGLE_TODO',
     RENAME_TODO: 'RENAME_TODO',
+    SET_FILTER: 'SET_FILTER',
+};
+
+export const filters = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_ACTIVE: 'SHOW_ACTIVE',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
 };
 
 export const fetchTodos = () => dispatch => {
@@ -13,7 +20,7 @@ export const fetchTodos = () => dispatch => {
         .then(resp => resp.json())
         .then(todos =>
             dispatch({
-                type: Types.FETCH_TODOS,
+                type: types.FETCH_TODOS,
                 todos,
             })
         )
@@ -35,7 +42,7 @@ export const addTodo = text => dispatch => {
         .then(resp => resp.json())
         .then(data => {
             dispatch({
-                type: Types.ADD_TODO,
+                type: types.ADD_TODO,
                 data,
             });
         })
@@ -53,7 +60,7 @@ export const deleteTodo = id => dispatch => {
     fetch(url, options)
         .then(() =>
             dispatch({
-                type: Types.DELETE_TODO,
+                type: types.DELETE_TODO,
                 id,
             })
         )
@@ -75,7 +82,7 @@ export const toggleTodo = (id, completed) => dispatch => {
         .then(resp => resp.json())
         .then(data =>
             dispatch({
-                type: Types.TOGGLE_TODO,
+                type: types.TOGGLE_TODO,
                 data,
             })
         )
@@ -96,10 +103,15 @@ export const renameTodo = (id, text) => dispatch => {
     fetch(url, options)
         .then(() => {
             dispatch({
-                type: Types.RENAME_TODO,
+                type: types.RENAME_TODO,
                 id,
                 text,
             });
         })
         .catch(e => console.error('Something went wrong...'));
 };
+
+export const setFilter = filter => ({
+    type: types.SET_FILTER,
+    filter,
+});
