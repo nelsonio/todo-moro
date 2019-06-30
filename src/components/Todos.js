@@ -8,6 +8,7 @@ import { filterTodos } from '../tools/filterTodos.js';
 import NewTodo from './NewTodo.js';
 import List from './List.js';
 import Footer from './Footer.js';
+import Loader from './Loader';
 
 class Todos extends Component {
     componentDidMount() {
@@ -24,7 +25,9 @@ class Todos extends Component {
                 <Footer />
             </>
         ) : (
-            <main>Loading...</main>
+            <main>
+                <Loader />
+            </main>
         );
     }
 }
